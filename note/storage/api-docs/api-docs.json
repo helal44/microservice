@@ -1,0 +1,148 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Note",
+        "description": " Crud Opration",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/show": {
+            "get": {
+                "summary": "Get a list of notes",
+                "operationId": "f3d4e26ad5202ed9863b857d7b5d54b9",
+                "responses": {
+                    "200": {
+                        "description": "List of notes"
+                    },
+                    "404": {
+                        "description": "Notes not found"
+                    }
+                }
+            }
+        },
+        "/api/search": {
+            "get": {
+                "summary": "Get a list of notes",
+                "operationId": "f2de267055ef9d7fea8be0cc4cee6fb9",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Filter notes by title",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of notes"
+                    },
+                    "404": {
+                        "description": "Notes not found"
+                    }
+                }
+            }
+        },
+        "/api/store": {
+            "post": {
+                "summary": "Create a new note",
+                "operationId": "245e4c9ebd9b61f649a9abdaa088ac73",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "useidr_": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "title": {
+                                        "type": "string",
+                                        "example": "New Note"
+                                    },
+                                    "content": {
+                                        "type": "string",
+                                        "example": "Note content"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Note created successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            }
+        },
+        "/api/update": {
+            "post": {
+                "summary": "update note note",
+                "operationId": "e1d3fe4c4fa3e6bb113096528abc9fce",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "useidr_": {
+                                        "type": "integer",
+                                        "example": "1"
+                                    },
+                                    "title": {
+                                        "type": "string",
+                                        "example": "New Note"
+                                    },
+                                    "content": {
+                                        "type": "string",
+                                        "example": "Note content"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Note updated successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                }
+            }
+        },
+        "/api/destroy": {
+            "get": {
+                "summary": "destroy note by id",
+                "operationId": "c32b34947d21693ffb8a50855580cfd6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Filter notes by id",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": " notes deleted"
+                    },
+                    "404": {
+                        "description": "Notes not found"
+                    }
+                }
+            }
+        }
+    }
+}
