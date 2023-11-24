@@ -21,7 +21,7 @@
  ## Installation
 
   ### Clone the repository
-    git clone https://github.com/your-username/note-microservice.git
+    git clone https://github.com/helal44/microservice.git
 
   ### Navigate to the project directory
     cd microservice/note
@@ -39,7 +39,7 @@
 ## Usage
 ### i use postmant to test api .  
  1- register or login from the user side   
- 2- take the token and place it on the auth headr of the note
+ 2- take the token and place it on the auth headr of the note  
  3- choose bearer token from the token type
 
  ## API Documentation
